@@ -5,6 +5,13 @@ from .serializers import UserSerializer, NoteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Note
 
+# backend/views.py
+from django.shortcuts import redirect
+
+def home(request):
+    # Redirect to the frontend React app
+    return redirect("http://localhost:3000")  # Adjust this URL if your frontend is hosted elsewhere
+
 
 class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
